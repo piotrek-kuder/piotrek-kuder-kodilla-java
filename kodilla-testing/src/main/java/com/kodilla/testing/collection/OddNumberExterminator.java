@@ -6,7 +6,7 @@ import java.util.*;
 public class OddNumberExterminator {
 
     public List<Integer> exterminate(List<Integer> numbers) {
-        List<Integer> evenNumbers = new LinkedList<>();
+        List<Integer> evenNumbers = new ArrayList<>();
 
         if(numbers.size() != 0) {
 
