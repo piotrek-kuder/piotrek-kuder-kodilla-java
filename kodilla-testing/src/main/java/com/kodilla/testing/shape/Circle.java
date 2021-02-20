@@ -15,5 +15,17 @@ public class Circle implements Shape {
         return field;
     }
     @Override
-    public String toString(){return "";}
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Circle circle = (Circle) o;
+
+        return Double.compare(circle.field, field) == 0;
+    }
+    @Override
+    public int hashCode() {
+        long temp = Double.doubleToLongBits(field);
+        return (int) (temp ^ (temp >>> 32));
+    }
 }

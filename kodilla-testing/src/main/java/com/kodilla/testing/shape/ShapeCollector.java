@@ -6,20 +6,32 @@ public class ShapeCollector {
     List<Shape> shapeCollection = new ArrayList<>();
 
     public void addFigure(Shape shape){
-        //empty
+        shapeCollection.add(shape);
     }
 
     public boolean removeFigure(Shape shape) {
-        //remember   if(shapeCollection.size() > 0)
-        return false;
+        boolean result = false;
+        if(shapeCollection.contains(shape)) {
+            shapeCollection.remove(shape);
+            result = true;
+        }
+        return result;
     }
 
     public Shape getFigure(int n) {
-        return new Circle(55.5);
+        if(n >= 0 && n < shapeCollection.size()) {
+            return shapeCollection.get(n);
+        }
+        return null;
     }
 
     public String showFigures() {
-        return "AAA";
+        String figuresNames = "";
+
+        for(Shape figure: shapeCollection) {
+            figuresNames = figuresNames + figure.getShapeName() + " ";
+        }
+        return figuresNames.substring(0,figuresNames.length() - 1);
     }
 
 }

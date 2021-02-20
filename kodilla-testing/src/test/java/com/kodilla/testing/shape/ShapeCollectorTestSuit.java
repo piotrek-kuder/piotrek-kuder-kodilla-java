@@ -56,7 +56,6 @@ public class ShapeCollectorTestSuit {
             //Given
             ShapeCollector collector = new ShapeCollector();
             collector.addFigure(new Circle(55.5));
-            System.out.println("size: " + collector.shapeCollection.size());
             //When
             Shape result = collector.getFigure(0);
             //Then
@@ -68,7 +67,6 @@ public class ShapeCollectorTestSuit {
             //Given
             ShapeCollector collector = new ShapeCollector();
             collector.addFigure(new Circle(55.5));
-            System.out.println("size: " + collector.shapeCollection.size());
             //When
             Shape result = collector.getFigure(-3);
             //Then
@@ -79,7 +77,6 @@ public class ShapeCollectorTestSuit {
             //Given
             ShapeCollector collector = new ShapeCollector();
             collector.addFigure(new Circle(55.5));
-            System.out.println("size: " + collector.shapeCollection.size());
             //When
             Shape result = collector.getFigure(5);
             //Then
