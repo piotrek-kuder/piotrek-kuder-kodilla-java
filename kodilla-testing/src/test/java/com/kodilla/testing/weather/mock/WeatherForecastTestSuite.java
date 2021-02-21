@@ -56,7 +56,7 @@ class WeatherForecastTestSuite {
         assertEquals(25.56, result);
     }
     @Test
-    void testCalculateMidianaTempWithMock() {
+    void testCalculateMedianaTempWithMock() {
         //Given
         WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
         //When
