@@ -130,7 +130,7 @@ public class BookDirectoryTestSuite {
             //When
             List<Book> theListOf5Books = bookLibrary.listBookInHandsOf(libraryUser);
             //Then
-            assertEquals(0, theListOf5Books.size());
+            assertEquals(5, theListOf5Books.size());
         }
     }
 

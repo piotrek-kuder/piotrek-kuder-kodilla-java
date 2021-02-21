@@ -2,6 +2,8 @@ package com.kodilla.testing.forum.statistics;
 
 public class StatisticsCollector {
     private Statistics statistics;
+
+    //dummy data
     int usersCount = 4;
     int postsCount = 4;
     int commentsCount = 4;
