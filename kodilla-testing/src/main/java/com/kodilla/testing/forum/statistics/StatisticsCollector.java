@@ -16,7 +16,7 @@ public class StatisticsCollector {
         postsCount = statistics.postsCount();
         commentsCount = statistics.commentsCount();
 
-        System.out.println("P " + postsCount + "   K" + commentsCount + "   U " + usersCount + "\n");
+        System.out.println("P " + postsCount + "   K " + commentsCount + "   U " + usersCount + "\n");
 
         if(usersCount == 0) {
             averagePostsPerUser = 0;
