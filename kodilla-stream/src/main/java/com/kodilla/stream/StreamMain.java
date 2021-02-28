@@ -55,9 +55,9 @@ public class StreamMain {
          */
 
         Forum theForum = new Forum();
-        LocalDate minimumDate = LocalDate.of(2001, 02, 28);
         Map<Integer, ForumUser> theUsersMap = theForum.getUserList().stream()
-                .filter(forumUser -> forumUser.getGender() == 'M' && forumUser.getPostsCount() > 0 && forumUser.getBirthDate().compareTo(minimumDate) <= 0)
+                .filter(forumUser -> forumUser.getGender() == 'M' && forumUser.getPostsCount() > 0
+                        && forumUser.getBirthDate().plusYears(20).compareTo(LocalDate.now()) <= 0)
                 .collect(Collectors.toMap(ForumUser::getIdNumber, forumUser -> forumUser));
 
         // only users 1, 7, 9 are in range
