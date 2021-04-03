@@ -31,7 +31,11 @@ public class FlightFinderRunner {
         for(Flight flight: flightList) {
             try {
                 flightFinder.findFlight(flight);
+           // } catch (RouteNotFoundException | Exception e) {
             } catch (RouteNotFoundException e) {
+                System.out.println("Route from: " + flight.getDepartureAirport() + " to " + flight.getArrivalAirport() + " not possible.");
+                System.out.println(":::::: " + e + " ::::::\n");
+            } catch (Exception e) {
                 System.out.println("Route from: " + flight.getDepartureAirport() + " to " + flight.getArrivalAirport() + " not possible.");
                 System.out.println(":::::: " + e + " ::::::\n");
             }

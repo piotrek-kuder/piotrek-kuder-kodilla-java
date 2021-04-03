@@ -169,8 +169,8 @@ public class BoardTestSuite {
                 .filter(inProgressTasks::contains)
                 .flatMap(t -> t.getTasks().stream())
                 .map(t -> t.getCreated().until(LocalDate.now(), DAYS))
-                .map(t -> t.intValue())
-                .mapToInt(t -> t)
+                //.map(t -> t.intValue())
+                .mapToInt(t -> t.intValue())  //miałem t -> t
                 .average().orElse(0);
 
         //Then
