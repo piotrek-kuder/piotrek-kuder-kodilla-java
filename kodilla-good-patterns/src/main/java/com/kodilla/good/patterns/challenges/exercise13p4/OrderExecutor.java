@@ -1,16 +1,16 @@
 package com.kodilla.good.patterns.challenges.exercise13p4;
 
-public class OrderStatus {
+public class OrderExecutor {
 
     private final OrderRepository orderRepository;
     private final InformationService infoSender;
 
-    public OrderStatus(OrderRepository orderRepository, InformationService infoSender) {
+    public OrderExecutor(OrderRepository orderRepository, InformationService infoSender) {
         this.orderRepository = orderRepository;
         this.infoSender = infoSender;
     }
 
-    public FoodOrderDTO summary(FoodOrder order, boolean processingStatus) {
+    public FoodOrderDTO finalizeOrder(FoodOrder order, boolean processingStatus) {
 
         boolean result;
 

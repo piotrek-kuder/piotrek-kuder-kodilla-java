@@ -7,7 +7,7 @@ public class ApplicationFood2Door {
     public static void main(String[] args) {
 
         OrderRepository orderRepository = new OrderRepository();
-        OrderStatus orderStatus = new OrderStatus(orderRepository, new MailSender());
+        OrderExecutor orderExecutor = new OrderExecutor(orderRepository, new MailSender());
         ExtraFoodShopService extraFoodShopService = new ExtraFoodShopService();
         HealthyShopService healthyShopService = new HealthyShopService();
         GlutenFreeShopService glutenFreeShopService = new GlutenFreeShopService();
@@ -37,15 +37,15 @@ public class ApplicationFood2Door {
             switch (order.getManufacturer()) {
                 case "ExtraFoodShop":
                     processingStatus = extraFoodShopService.process(order);
-                    orderDTOList.add(orderStatus.summary(order, processingStatus));
+                    orderDTOList.add(orderExecutor.finalizeOrder(order, processingStatus));
                     break;
                 case "HealthyShop":
                     processingStatus = healthyShopService.process(order);
-                    orderDTOList.add(orderStatus.summary(order, processingStatus));
+                    orderDTOList.add(orderExecutor.finalizeOrder(order, processingStatus));
                     break;
                 case "GlutenFreeShop":
                     processingStatus = glutenFreeShopService.process(order);
-                    orderDTOList.add(orderStatus.summary(order, processingStatus));
+                    orderDTOList.add(orderExecutor.finalizeOrder(order, processingStatus));
                     break;
                 default:
                     System.out.println("\nError - couldn't find food manufacturer:  " + order.getManufacturer() + "\n");
