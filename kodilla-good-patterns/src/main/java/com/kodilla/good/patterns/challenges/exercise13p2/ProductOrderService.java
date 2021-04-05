@@ -15,7 +15,11 @@ public class ProductOrderService {
     public OrderDTO process(Order order) {
 
         boolean isValid = orderValidator.validateOrder(order);
-        boolean isInRepository = orderRepository.addOrderToRepository(order);
+        boolean isInRepository = false;
+
+        if(isValid) {
+            isInRepository = orderRepository.addOrderToRepository(order);
+        }
 
         if(isValid && isInRepository) {
             mailSender.sendMessage(order);
