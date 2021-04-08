@@ -8,7 +8,7 @@ public class Application {
     public static void main(String[] args) {
 
         AirportsDatabase airportsDatabase = new AirportsDatabase();
-        Map<String, List> airportsConnectionsMap = airportsDatabase.getAirportsConnectionsMap();
+        Map<String, List<String>> airportsConnectionsMap = airportsDatabase.getAirportsConnectionsMap();
         ConnectionFinder connectionFinder = new ConnectionFinder(airportsConnectionsMap);
 
         connectionFinder.findDepartures("port1");

@@ -12,7 +12,7 @@ public class AirportsDatabase {
     private final List<String> airport4Departures;
     private final List<String> airport5Departures;
     private final List<String> airport6Departures;
-    private final Map<String, List> airportsConnectionsMap;
+    private final Map<String, List<String>> airportsConnectionsMap;
 
     public AirportsDatabase() {
 
@@ -51,7 +51,7 @@ public class AirportsDatabase {
         airportsConnectionsMap.put("port6", airport6Departures);
     }
 
-    public Map<String, List> getAirportsConnectionsMap() {
+    public Map<String, List<String>> getAirportsConnectionsMap() {
         return new HashMap<>(airportsConnectionsMap);
     }
 }

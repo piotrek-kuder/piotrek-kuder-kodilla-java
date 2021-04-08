@@ -5,9 +5,9 @@ import java.util.Map;
 
 public class ConnectionFinder {
 
-    private final Map<String, List> connectionsMap;
+    private final Map<String, List<String>> connectionsMap;
 
-    public ConnectionFinder(Map<String, List> connectionsMap) {
+    public ConnectionFinder(Map<String, List<String>> connectionsMap) {
         this.connectionsMap = connectionsMap;
     }
 
@@ -36,15 +36,6 @@ public class ConnectionFinder {
         connectionsMap.entrySet().stream().filter(map -> map.getValue().contains(start) && map.getValue().contains(endpoint))
                 .map(entry -> entry.getKey())
                 .forEach(System.out::println);
-
-
-       /* List<String> intermediate = connectionsMap.entrySet().stream()
-                .filter(entry -> entry.getKey().contains(start))
-                .map(entry -> entry.getValue().stream().toString())
-                .collect(Collectors.toList());
-        System.out.println(intermediate.toString());
-
-        */
 
     }
 }
