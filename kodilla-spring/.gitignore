@@ -6,6 +6,8 @@ build/
 !**/src/test/**/build/
 **/out/
 **/build/
+**/gradle/
+**/gradle/**
 todo.txt
 
 ### STS ###
