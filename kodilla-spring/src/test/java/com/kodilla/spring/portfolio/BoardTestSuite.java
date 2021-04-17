@@ -5,6 +5,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import java.util.Arrays;
+
 @SpringBootTest
 public class BoardTestSuite {
 
@@ -28,6 +30,8 @@ public class BoardTestSuite {
         board.getInProgressList().getTaskList().forEach(System.out::println);
         System.out.println("Done list:");
         board.getDoneList().getTaskList().forEach(System.out::println);
+        System.out.println("BEANS list:");
+        Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
     }
 
     @Test
@@ -50,5 +54,7 @@ public class BoardTestSuite {
         board.getInProgressList().getTaskList().forEach(System.out::println);
         System.out.println("Done list:");
         board.getDoneList().getTaskList().forEach(System.out::println);
+        System.out.println("BEANS list:");
+        Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
     }
 }
