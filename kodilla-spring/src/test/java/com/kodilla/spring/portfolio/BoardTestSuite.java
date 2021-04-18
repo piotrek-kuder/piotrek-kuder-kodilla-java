@@ -15,46 +15,22 @@ public class BoardTestSuite {
         //Given
         ApplicationContext context = new AnnotationConfigApplicationContext(BoardConfig.class);
         Board board = context.getBean(Board.class);
+        Board board2 = context.getBean(Board.class);
         //When
-        board.getToDoList().getTaskList().add("task TO DO nr 1");
-        board.getToDoList().getTaskList().add("task TO DO nr 2");
-        board.getInProgressList().getTaskList().add("task IN PROGRESS nr 1");
-        board.getInProgressList().getTaskList().add("task IN PROGRESS nr 2");
-        board.getDoneList().getTaskList().add("task DONE nr 1");
-        board.getDoneList().getTaskList().add("task DONE nr 2");
+        board.getToDoList().getTaskList().add("task TO DO 1");
+        board.getInProgressList().getTaskList().add("task IN PROGRESS 1");
+        board.getDoneList().getTaskList().add("task DONE 1");
+        board2.getToDoList().getTaskList().add("task TO DO 2");
+        board2.getInProgressList().getTaskList().add("task IN PROGRESS 2");
+        board2.getDoneList().getTaskList().add("task DONE 2");
         //Then
+        System.out.println("To do list:");
+        board.getToDoList().getTaskList().forEach(System.out::println);
+        System.out.println("In progress list:");
+        board.getInProgressList().getTaskList().forEach(System.out::println);
+        System.out.println("Done list:");
+        board.getDoneList().getTaskList().forEach(System.out::println);
         System.out.println("\n<<< Beans created with BoardConfig >>>");
-        System.out.println("To do list:");
-        board.getToDoList().getTaskList().forEach(System.out::println);
-        System.out.println("In progress list:");
-        board.getInProgressList().getTaskList().forEach(System.out::println);
-        System.out.println("Done list:");
-        board.getDoneList().getTaskList().forEach(System.out::println);
-        System.out.println("BEANS list:");
-        Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
-    }
-
-    @Test
-    void testAddTaskDifferentConfig() {
-        //Given
-        ApplicationContext context = new AnnotationConfigApplicationContext(BoardConfigSingleTaskList.class);
-        Board board = context.getBean(Board.class);
-        //When
-        board.getToDoList().getTaskList().add("task TO DO nr 1");
-        board.getToDoList().getTaskList().add("task TO DO nr 2");
-        board.getInProgressList().getTaskList().add("task IN PROGRESS nr 1");
-        board.getInProgressList().getTaskList().add("task IN PROGRESS nr 2");
-        board.getDoneList().getTaskList().add("task DONE nr 1");
-        board.getDoneList().getTaskList().add("task DONE nr 2");
-        //Then
-        System.out.println("\n<<< Beans created with BoardConfigSingleTaskList >>>");
-        System.out.println("To do list:");
-        board.getToDoList().getTaskList().forEach(System.out::println);
-        System.out.println("In progress list:");
-        board.getInProgressList().getTaskList().forEach(System.out::println);
-        System.out.println("Done list:");
-        board.getDoneList().getTaskList().forEach(System.out::println);
-        System.out.println("BEANS list:");
         Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
     }
 }
