@@ -21,7 +21,8 @@ public class BoardConfig {
     @Qualifier("doneList")
     TaskList doneList;
 
-    @Bean(name = "board")
+    @Bean//(name = "board")
+    @Scope("prototype")
     public Board getBoard() {
         return new Board(toDoList, inProgressList, doneList);
     }

@@ -10,6 +10,7 @@ public class Board {
         this.toDoList = toDoList;
         this.inProgressList = inProgressList;
         this.doneList = doneList;
+        System.out.println("Bean board    " + System.nanoTime());
     }
 
     public TaskList getToDoList() {
