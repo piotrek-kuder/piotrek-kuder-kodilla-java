@@ -27,11 +27,8 @@ public class PaintingTask implements Task {
         return isExecuted;
     }
 
-    public String getColor() {
-        return color;
-    }
-
-    public String getWhatToPaint() {
-        return whatToPaint;
+    @Override
+    public String toString() {
+        return taskName + " : " + color + " : " + whatToPaint;
     }
 }

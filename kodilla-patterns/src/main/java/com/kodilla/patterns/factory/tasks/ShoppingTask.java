@@ -27,11 +27,8 @@ public class ShoppingTask implements Task {
         return isExecuted;
     }
 
-    public String getWhatToBuy() {
-        return whatToBuy;
-    }
-
-    public double getQuantity() {
-        return quantity;
+    @Override
+    public String toString() {
+        return taskName + " : " + whatToBuy + " : " + quantity;
     }
 }

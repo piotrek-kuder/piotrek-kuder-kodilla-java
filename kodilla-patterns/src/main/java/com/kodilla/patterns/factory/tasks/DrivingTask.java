@@ -27,11 +27,8 @@ public class DrivingTask implements Task {
         return isExecuted;
     }
 
-    public String getWhere() {
-        return where;
-    }
-
-    public String getUsing() {
-        return using;
+    @Override
+    public String toString() {
+        return taskName + " : " + where + " : " + using;
     }
 }
