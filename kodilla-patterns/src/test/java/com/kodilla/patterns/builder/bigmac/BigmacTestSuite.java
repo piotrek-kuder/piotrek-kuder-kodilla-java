@@ -13,7 +13,7 @@ public class BigmacTestSuite {
                 .bun("bun no sesam")
                 .sauce("barbecue")
                 .burgers(2)
-                .ingredients(Adding.CHEESE).ingredients(Adding.CUCUMBER).ingredients(Adding.LETTUCE)
+                .ingredients(Ingredient.CHEESE).ingredients(Ingredient.CUCUMBER).ingredients(Ingredient.LETTUCE)
                 .builder();
         //When
         int result = bigmac.getIngredients().size();

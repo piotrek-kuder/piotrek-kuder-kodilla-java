@@ -1,6 +1,6 @@
 package com.kodilla.patterns.builder.bigmac;
 
-public enum Adding {
+public enum Ingredient {
     LETTUCE("lettuce"),
     ONION("onion"),
     BECKON("beckon"),
@@ -10,13 +10,13 @@ public enum Adding {
     SHRIMPS("shrimps"),
     CHEESE("cheese");
 
-    private String adding;
+    private String ingredient;
 
-    Adding(String adding) {
-        this.adding = adding;
+    Ingredient(String ingredient) {
+        this.ingredient = ingredient;
     }
 
-    public String getAdding() {
-        return adding;
+    public String getIngredient() {
+        return ingredient;
     }
 }

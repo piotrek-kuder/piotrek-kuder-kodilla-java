@@ -8,9 +8,9 @@ public class Bigmac {
     private final String bun;
     private final String sauce;
     private final int burgers;
-    private List<Adding> ingredients;
+    private List<Ingredient> ingredients;
 
-    private Bigmac(String bun, String sauce, int burgers, List<Adding> ingredients) {
+    private Bigmac(String bun, String sauce, int burgers, List<Ingredient> ingredients) {
         this.bun = bun;
         this.sauce = sauce;
         this.burgers = burgers;
@@ -21,7 +21,7 @@ public class Bigmac {
         private String bun;
         private String sauce;
         private int burgers;
-        private List<Adding> ingredients = new ArrayList<>();
+        private List<Ingredient> ingredients = new ArrayList<>();
 
         public BigmacBuilder bun(String bun) {
             this.bun = bun;
@@ -38,7 +38,7 @@ public class Bigmac {
             return this;
         }
 
-        public BigmacBuilder ingredients(Adding ingredient) {
+        public BigmacBuilder ingredients(Ingredient ingredient) {
             this.ingredients.add(ingredient);
             return this;
         }
@@ -60,14 +60,14 @@ public class Bigmac {
         return burgers;
     }
 
-    public List<Adding> getIngredients() {
+    public List<Ingredient> getIngredients() {
         return ingredients;
     }
 
     @Override
     public String toString() {
 
-        String adding = ingredients.stream().map(s -> s.getAdding()).collect(Collectors.joining(", ","","'"));
+        String adding = ingredients.stream().map(s -> s.getIngredient()).collect(Collectors.joining(", ","","'"));
 
         return "Bigmac ingredients:" +
                 "\nbun = '" + bun + '\'' +

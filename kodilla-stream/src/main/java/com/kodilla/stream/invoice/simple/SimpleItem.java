@@ -4,12 +4,12 @@ public final class SimpleItem {
     private final SimpleProduct product;
     private final double quantity;
 
-    public SimpleItem(final SimpleProduct procuct, final double quantity) {
-        this.product = procuct;
+    public SimpleItem(final SimpleProduct product, final double quantity) {
+        this.product = product;
         this.quantity = quantity;
     }
 
-    public SimpleProduct getProcuct() {
+    public SimpleProduct getProduct() {
         return product;
     }
 
