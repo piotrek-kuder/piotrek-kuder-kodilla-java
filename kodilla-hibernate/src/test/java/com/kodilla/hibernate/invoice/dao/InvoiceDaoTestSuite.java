@@ -17,12 +17,6 @@ public class InvoiceDaoTestSuite {
     @Autowired
     private InvoiceDao invoiceDao;
 
-    @Autowired
-    private ProductDao productDao;
-
-    @Autowired
-    private ItemDao itemDao;
-
     @Test
     void testInvoiceDaoSave() {
         //Given
@@ -36,11 +30,7 @@ public class InvoiceDaoTestSuite {
         Item item2 = new Item(new BigDecimal(22), 2);
         Item item3 = new Item(new BigDecimal(33), 3);
 
-        productDao.save(product1);   //problem
-        productDao.save(product2);
-        productDao.save(product3);
-
-        item1.setProduct(product1);   //problem
+        item1.setProduct(product1);
         item2.setProduct(product2);
         item3.setProduct(product3);
 
@@ -59,9 +49,6 @@ public class InvoiceDaoTestSuite {
         //When
         invoiceDao.save(invoice1);
         int invoice1Id = invoice1.getId();
-        int product1Id = product1.getId();
-        int product2Id = product2.getId();
-        int product3Id = product3.getId();
 
         //Then
         System.out.println(invoice1);
@@ -69,8 +56,5 @@ public class InvoiceDaoTestSuite {
 
         //CleanUp
         invoiceDao.deleteById(invoice1Id);
-        productDao.deleteById(product1Id);
-        productDao.deleteById(product2Id);
-        productDao.deleteById(product3Id);
     }
 }
